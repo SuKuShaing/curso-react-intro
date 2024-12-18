@@ -1,0 +1,11 @@
+.Icon-check--active {
+    color: green;
+    font-weight: bold;
+}
+
+
+
+.TodoItem-p--complete {
+    text-decoration: line-through;
+    color: #a2a2a2;
+}
