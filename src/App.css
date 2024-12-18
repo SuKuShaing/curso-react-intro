@@ -1,9 +1,14 @@
+body, #root {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100dvw;
-    height: 100dvh;
+    height: 100vh;
     z-index: -1;
     overflow: hidden; /* Asegura que el contenido que se salga del contenedor no se muestre */
 }

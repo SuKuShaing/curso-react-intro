@@ -1,9 +1,36 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.TodoItem-p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.Icon{
+    font-size: 1.2rem;
+}
+
+.Icon-check {
+}
+
+.Icon-delete {
+    cursor: pointer;
+}
+
 .Icon-check--active {
+
     color: green;
     font-weight: bold;
 }
-
-
 
 .TodoItem-p--complete {
     text-decoration: line-through;

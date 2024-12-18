@@ -1,7 +1,11 @@
+import "./TodoSearch.css";
+
 function TodoSearch() {
-    return (
-        <input placeholder="Cortar Cebolla" />
-    );
+	return (
+		<div className="TodoSearch">
+			<input placeholder="Cortar Cebolla" />
+		</div>
+	);
 }
 
 export { TodoSearch };

@@ -4,7 +4,6 @@ const estilos = {
 	backgroundColor: "red",
 };
 
-
 function TodoCounter({ completed, total }) {
 	return (
 		<h1>
