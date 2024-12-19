@@ -22,7 +22,11 @@ function App() {
 		<>
 			<ContainerWhite>
 				<TodoCounter completed={16} total={25} />
-				<TodoSearch />
+				
+				<div className="Search-Create">
+					<TodoSearch />
+					<CreateTodoButton />
+				</div>
 
 				<TodoList>
 					{/* React necesita una key cuando itera desde un array */}
@@ -34,8 +38,6 @@ function App() {
 						/>
 					))}
 				</TodoList>
-
-				<CreateTodoButton />
 			</ContainerWhite>
 
 			<Background />

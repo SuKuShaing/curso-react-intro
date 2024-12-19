@@ -4,11 +4,14 @@
     place-items: center;
 }
 
-.TodoSearch input {
+/* .TodoSearch input { */
+input {
+    flex-grow: 1;
     width: 50%;
     margin: 20px auto;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    margin: 10px;
 }
