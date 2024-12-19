@@ -1,11 +1,19 @@
 import "./CreateTodoButton.css";
 
 function CreateTodoButton() {
-    return (
-        <button className="CreateTodoButton">
-            +
-        </button>
-    );
+	return (
+		<button
+			className="CreateTodoButton"
+			onClick={
+                (event) => {
+                    console.log("Crear una nueva tarea");
+                    console.log(event);
+                    console.log(event.target);
+                }}
+		>
+			+
+		</button>
+	);
 }
 
 export { CreateTodoButton };

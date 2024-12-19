@@ -13,7 +13,7 @@ function Background() {
 					>
 						<animate
 							attributeName="fx"
-							dur="34s"
+							dur="102s" // 68s * 1.5
 							values="0%;3%;0%"
 							repeatCount="indefinite"
 						></animate>
@@ -30,7 +30,7 @@ function Background() {
 					>
 						<animate
 							attributeName="fx"
-							dur="23.5s"
+							dur="70.5s" // 47s * 1.5
 							values="0%;3%;0%"
 							repeatCount="indefinite"
 						></animate>
@@ -47,7 +47,7 @@ function Background() {
 					>
 						<animate
 							attributeName="fx"
-							dur="21.5s"
+							dur="64.5s" // 43s * 1.5
 							values="0%;3%;0%"
 							repeatCount="indefinite"
 						></animate>
@@ -64,7 +64,7 @@ function Background() {
 					>
 						<animate
 							attributeName="fx"
-							dur="23s"
+							dur="69s" // 46s * 1.5
 							values="0%;5%;0%"
 							repeatCount="indefinite"
 						></animate>
@@ -81,7 +81,7 @@ function Background() {
 					>
 						<animate
 							attributeName="fx"
-							dur="24.5s"
+							dur="73.5s" // 49s * 1.5
 							values="0%;5%;0%"
 							repeatCount="indefinite"
 						></animate>
@@ -98,7 +98,7 @@ function Background() {
 					>
 						<animate
 							attributeName="fx"
-							dur="25.5s"
+							dur="76.5s" // 51s * 1.5
 							values="0%;5%;0%"
 							repeatCount="indefinite"
 						></animate>
@@ -109,13 +109,13 @@ function Background() {
 				<rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient4)">
 					<animate
 						attributeName="x"
-						dur="20s"
+						dur="60s" // 40s * 1.5
 						values="25%;0%;25%"
 						repeatCount="indefinite"
 					/>
 					<animate
 						attributeName="y"
-						dur="21s"
+						dur="63s" // 42s * 1.5
 						values="0%;25%;0%"
 						repeatCount="indefinite"
 					/>
@@ -124,20 +124,20 @@ function Background() {
 						type="rotate"
 						from="0 50 50"
 						to="360 50 50"
-						dur="17s"
+						dur="51s" // 34s * 1.5
 						repeatCount="indefinite"
 					/>
 				</rect>
 				<rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient5)">
 					<animate
 						attributeName="x"
-						dur="23s"
+						dur="69s" // 46s * 1.5
 						values="0%;-25%;0%"
 						repeatCount="indefinite"
 					/>
 					<animate
 						attributeName="y"
-						dur="24s"
+						dur="72s" // 48s * 1.5
 						values="25%;-25%;25%"
 						repeatCount="indefinite"
 					/>
@@ -146,20 +146,20 @@ function Background() {
 						type="rotate"
 						from="0 50 50"
 						to="360 50 50"
-						dur="18s"
+						dur="54s" // 36s * 1.5
 						repeatCount="indefinite"
 					/>
 				</rect>
 				<rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient6)">
 					<animate
 						attributeName="x"
-						dur="25s"
+						dur="75s" // 50s * 1.5
 						values="-25%;0%;-25%"
 						repeatCount="indefinite"
 					/>
 					<animate
 						attributeName="y"
-						dur="26s"
+						dur="78s" // 52s * 1.5
 						values="0%;-25%;0%"
 						repeatCount="indefinite"
 					/>
@@ -168,7 +168,7 @@ function Background() {
 						type="rotate"
 						from="360 50 50"
 						to="0 50 50"
-						dur="19s"
+						dur="57s" // 38s * 1.5
 						repeatCount="indefinite"
 					/>
 				</rect>
@@ -182,13 +182,13 @@ function Background() {
 				>
 					<animate
 						attributeName="x"
-						dur="20s"
+						dur="60s" // 40s * 1.5
 						values="25%;0%;25%"
 						repeatCount="indefinite"
 					></animate>
 					<animate
 						attributeName="y"
-						dur="21s"
+						dur="63s" // 42s * 1.5
 						values="0%;25%;0%"
 						repeatCount="indefinite"
 					></animate>
@@ -197,7 +197,7 @@ function Background() {
 						type="rotate"
 						from="0 50 50"
 						to="360 50 50"
-						dur="7s"
+						dur="21s" // 14s * 1.5
 						repeatCount="indefinite"
 					></animateTransform>
 				</rect>
@@ -211,13 +211,13 @@ function Background() {
 				>
 					<animate
 						attributeName="x"
-						dur="23s"
+						dur="69s" // 46s * 1.5
 						values="-25%;0%;-25%"
 						repeatCount="indefinite"
 					></animate>
 					<animate
 						attributeName="y"
-						dur="24s"
+						dur="72s" // 48s * 1.5
 						values="0%;50%;0%"
 						repeatCount="indefinite"
 					></animate>
@@ -226,7 +226,7 @@ function Background() {
 						type="rotate"
 						from="0 50 50"
 						to="360 50 50"
-						dur="12s"
+						dur="36s" // 24s * 1.5
 						repeatCount="indefinite"
 					></animateTransform>
 				</rect>
@@ -240,13 +240,13 @@ function Background() {
 				>
 					<animate
 						attributeName="x"
-						dur="25s"
+						dur="75s" // 50s * 1.5
 						values="0%;25%;0%"
 						repeatCount="indefinite"
 					></animate>
 					<animate
 						attributeName="y"
-						dur="12s"
+						dur="36s" // 24s * 1.5
 						values="0%;25%;0%"
 						repeatCount="indefinite"
 					></animate>
@@ -255,7 +255,7 @@ function Background() {
 						type="rotate"
 						from="360 50 50"
 						to="0 50 50"
-						dur="9s"
+						dur="27s" // 18s * 1.5
 						repeatCount="indefinite"
 					></animateTransform>
 				</rect>
