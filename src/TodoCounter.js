@@ -6,7 +6,11 @@ const estilos = {
 
 function TodoCounter({ completed, total }) {
 	return (
-		<h1>
+		completed === total 
+		? <h1>
+			Has completado todos los TODOs
+		</h1>
+		: <h1>
 			Has completado {completed} de {total} TODOs
 		</h1>
 	);
