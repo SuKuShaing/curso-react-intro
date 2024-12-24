@@ -15,23 +15,6 @@
     font-size: 1.1rem;
 }
 
-.Icon{
-    font-size: 1.2rem;
-}
-
-.Icon-check {
-}
-
-.Icon-delete {
-    cursor: pointer;
-}
-
-.Icon-check--active {
-
-    color: green;
-    font-weight: bold;
-}
-
 .TodoItem-p--complete {
     text-decoration: line-through;
     color: #a2a2a2;
