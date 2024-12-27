@@ -22,22 +22,36 @@ import "./App.css";
 
 // localStorage.setItem('todosEnLocalStorage', JSON.stringify(defaultTodos)); // guardamos los todos en el localStorage
 
-function App() {
-	const localStorageTodos = localStorage.getItem('todosEnLocalStorage'); // obtenemos los todos del localStorage
+// Custom Hook
+function useLocalStorage(itemName, initialValue) {
+	// Hook personalizado para guardar los todos en el localStorage
+	const localStorageItem = localStorage.getItem(itemName); // obtenemos los todos del localStorage
 
-	let parsedTodos; // declaramos una variable para guardar los todos del localStorage
+	let parsedItem; // declaramos una variable para guardar los todos del localStorage
 
-	if (!localStorageTodos) {
-		localStorage.setItem('todosEnLocalStorage', JSON.stringify([])); // si no hay todos en el localStorage, creamos un array vacío
-		parsedTodos = [];
+	if (!localStorageItem) {
+		localStorage.setItem(itemName, JSON.stringify(initialValue)); // si no hay todos en el localStorage, creamos un valor inicial que nos enviaron
+		parsedItem = initialValue;
 	} else {
-		parsedTodos = JSON.parse(localStorageTodos); // convertimos los todos del localStorage a un array de objetos
+		parsedItem = JSON.parse(localStorageItem); // convertimos los todos del localStorage a un array de objetos
 	}
 
+	const [item, setItem] = React.useState(parsedItem);
+
+	const iSaveItem = (newItem) => {
+		// función para guardar los todos en el localStorage y actualizar el estado de todos
+		localStorage.setItem(itemName, JSON.stringify(newItem)); // guardamos los todos en el localStorage
+		setItem(newItem); // setTodos es la función que actualiza el estado de todos
+	};
+
+	return [item, iSaveItem];
+}
+
+function App() {
 	// Estados
-	const [todos, setTodos] = React.useState(parsedTodos); // al estado de Todos le pasamos el array de defaultTodos
-	const [searchValue, setSearchValue] = React.useState('');
-	console.log('Los usuarios buscan todos de ' + searchValue);
+	const [todos, saveTodos] = useLocalStorage('todosEnLocalStorage', []); // al estado de Todos le pasamos el array de defaultTodos
+	const [searchValue, setSearchValue] = React.useState("");
+	console.log("Los usuarios buscan todos de " + searchValue);
 
 	// Estados derivados
 	const completedTodos = todos.filter((todo) => !!todo.completed).length; // !! convierte el valor devuelto a booleano
@@ -49,40 +63,31 @@ function App() {
 	});
 
 	// Funciones
-	const iSaveTodos = (newTodos) => { // función para guardar los todos en el localStorage y actualizar el estado de todos
-		localStorage.setItem('todosEnLocalStorage', JSON.stringify(newTodos)); // guardamos los todos en el localStorage
-		setTodos(newTodos); // setTodos es la función que actualiza el estado de todos
-	}
-
 	const iCompletedTodo = (text) => {
 		const newTodos = [...todos];
-		const todoIndex = newTodos.findIndex(
-			(todo) => todo.text === text
-		);
+		const todoIndex = newTodos.findIndex((todo) => todo.text === text);
 		if (newTodos[todoIndex].completed) {
 			newTodos[todoIndex].completed = false;
 		} else {
 			newTodos[todoIndex].completed = true;
 		}
-		iSaveTodos(newTodos);
+		saveTodos(newTodos);
 	};
 
 	const iDeleteTodo = (text) => {
 		const newTodos = [...todos];
-		const todoIndex = newTodos.findIndex(
-			(todo) => todo.text === text
-		);
+		const todoIndex = newTodos.findIndex((todo) => todo.text === text);
 		newTodos.splice(todoIndex, 1); // splice elimina un elemento de un array en el indice que le indiquemos y avanza la cantidad de elementos que le indiquemos
-		iSaveTodos(newTodos);
+		saveTodos(newTodos);
 	};
 
 	return (
 		<>
 			<ContainerWhite>
 				<TodoCounter completed={completedTodos} total={totalTodos} />
-				
+
 				<div className="Search-Create">
-					<TodoSearch 
+					<TodoSearch
 						searchValue={searchValue} // enviamos el estado a traves de la propiedad
 						setSearchValue={setSearchValue}
 					/>
