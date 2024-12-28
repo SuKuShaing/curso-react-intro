@@ -4,7 +4,7 @@ import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
-import { Background } from "./Background";
+import { Background } from "./ContainerWhite/Background";
 import { ContainerWhite } from "./ContainerWhite";
 
 import "./App.css";
