@@ -21,13 +21,27 @@ import "./App.css";
 
 function App() {
 	// Estados
-	const [todos, saveTodos] = useLocalStorage('todosEnLocalStorage', []); // al estado de Todos le pasamos el array de defaultTodos
+	const {
+		item: todos,
+		iSaveItem: saveTodos,
+		loading,
+		error
+	} = useLocalStorage('todosEnLocalStorage', []); // al estado de Todos le pasamos el array de defaultTodos
 	const [searchValue, setSearchValue] = React.useState("");
 	console.log("Los usuarios buscan todos de " + searchValue);
 
 	// Estados derivados
 	const completedTodos = todos.filter((todo) => !!todo.completed).length; // !! convierte el valor devuelto a booleano
 	const totalTodos = todos.length;
+
+	// React.useEffect(() => {
+	// 	console.log('Log 2: Dentro del useEffect');
+	// }, []);  // si le pasamos un array vacio, el useEffect se ejecutará solo una
+
+	// React.useEffect(() => {
+	// 	console.log('Log 2: Dentro del useEffect');
+	// }, [totalTodos]);  // si le pasamos un array con una variable, el useEffect se ejecutará solo cuando esa variable cambie
+
 	const searchedTodos = todos.filter((todo) => {
 		const todoText = todo.text.toLowerCase();
 		const searchText = searchValue.toLowerCase();
@@ -55,6 +69,8 @@ function App() {
 
 	return (
 		<AppUI 
+			loading={loading}
+			error={error}
 			completedTodos={completedTodos}
 			totalTodos={totalTodos}
 			searchValue={searchValue}

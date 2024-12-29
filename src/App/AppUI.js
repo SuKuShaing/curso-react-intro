@@ -7,6 +7,8 @@ import { Background } from "../ContainerWhite/Background";
 import { ContainerWhite } from "../ContainerWhite";
 
 function AppUI({
+	loading,
+	error,
     completedTodos,
     totalTodos,
     searchValue,
@@ -31,6 +33,10 @@ function AppUI({
 				<TodoList>
 					{/* React necesita una key cuando itera desde un array */}
 					{/* defaultTodos */}
+					{loading && <p>Cargando todos...</p>}
+					{error && <p>Hubo un error cargando los todos</p>}
+					{!loading && !searchedTodos.length && <p>Crea tu primer TODO</p>}
+
 					{searchedTodos.map((props) => (
 						<TodoItem
 							key={props.text}

@@ -1,20 +1,24 @@
-import React from 'react';
+import React from "react";
 
 // Custom Hook
-function useLocalStorage(itemName, initialValue) {
-	// Hook personalizado para guardar los todos en el localStorage
-	const localStorageItem = localStorage.getItem(itemName); // obtenemos los todos del localStorage
+// Hook personalizado para guardar los todos en el localStorage
+function useLocalStorage(itemName, [initialValue]) {
+	const [item, setItem] = React.useState(initialValue); // declaramos un estado para guardar los todos
+	const [loading, setLoading] = React.useState(true); // declaramos un estado para saber si los todos se están cargando
+	const [error, setError] = React.useState(false); // declaramos un estado para saber si hubo un error al cargar los todos
 
-	let parsedItem; // declaramos una variable para guardar los todos del localStorage
+	React.useEffect(() => {
+		const localStorageItem = localStorage.getItem(itemName); // obtenemos los todos del localStorage
 
-	if (!localStorageItem) {
-		localStorage.setItem(itemName, JSON.stringify(initialValue)); // si no hay todos en el localStorage, creamos un valor inicial que nos enviaron
-		parsedItem = initialValue;
-	} else {
-		parsedItem = JSON.parse(localStorageItem); // convertimos los todos del localStorage a un array de objetos
-	}
+		let parsedItem; // declaramos una variable para guardar los todos del localStorage
 
-	const [item, setItem] = React.useState(parsedItem);
+		if (!localStorageItem) {
+			localStorage.setItem(itemName, JSON.stringify(initialValue)); // si no hay todos en el localStorage, creamos un valor inicial que nos enviaron
+			parsedItem = initialValue;
+		} else {
+			parsedItem = JSON.parse(localStorageItem); // convertimos los todos del localStorage a un array de objetos
+		}
+	});
 
 	const iSaveItem = (newItem) => {
 		// función para guardar los todos en el localStorage y actualizar el estado de todos
@@ -22,7 +26,12 @@ function useLocalStorage(itemName, initialValue) {
 		setItem(newItem); // setTodos es la función que actualiza el estado de todos
 	};
 
-	return [item, iSaveItem];
+	return {
+		item,
+		iSaveItem,
+		loading,
+		error
+	}; // retornamos los estados y la función para guardar los todos
 }
 
 export { useLocalStorage }; // exportamos el Hook personalizado
