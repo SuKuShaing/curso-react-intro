@@ -5,6 +5,9 @@ import { TodoItem } from "../TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Background } from "../ContainerWhite/Background";
 import { ContainerWhite } from "../ContainerWhite";
+import { TodosLoading } from "../TodosLoading";
+import { TodosError } from "../TodosError";
+import { EmptyTodos } from "../EmptyTodos";
 
 function AppUI({
 	loading,
@@ -33,9 +36,9 @@ function AppUI({
 				<TodoList>
 					{/* React necesita una key cuando itera desde un array */}
 					{/* defaultTodos */}
-					{loading && <p>Cargando todos...</p>}
-					{error && <p>Hubo un error cargando los todos</p>}
-					{!loading && !searchedTodos.length && <p>Crea tu primer TODO</p>}
+					{loading && <TodosLoading />}
+					{error && <TodosError />}
+					{!loading && !searchedTodos.length && <EmptyTodos />}
 
 					{searchedTodos.map((props) => (
 						<TodoItem
