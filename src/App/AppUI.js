@@ -23,7 +23,7 @@ function AppUI({
     return (
         <>
 			<ContainerWhite>
-				<TodoCounter completed={completedTodos} total={totalTodos} />
+				<TodoCounter loading={loading} completed={completedTodos} total={totalTodos} />
 
 				<div className="Search-Create">
 					<TodoSearch

@@ -4,15 +4,20 @@ import "./TodoCounter.css";
 // 	backgroundColor: "red",
 // };
 
-function TodoCounter({ completed, total }) {
+function TodoCounter({ completed, total, loading }) {
 	return (
-		completed === total 
-		? <h1>
-			Has completado todos los TODOs
+		loading ? 
+		<h1>
+			Cargando Todos
 		</h1>
-		: <h1>
-			Has completado {completed} de {total} TODOs
-		</h1>
+		:
+			completed === total
+			? <h1>
+				Has completado todos los TODOs
+			</h1>
+			: <h1>
+				Has completado {completed} de {total} TODOs
+			</h1>
 	);
 }
 

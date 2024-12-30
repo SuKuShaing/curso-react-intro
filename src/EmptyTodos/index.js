@@ -3,7 +3,7 @@
 
 function EmptyTodos() {
 	return (
-		<p>Cargando... </p>
+		<p>Crea tu Primer Todo</p>
 	);
 }
 
