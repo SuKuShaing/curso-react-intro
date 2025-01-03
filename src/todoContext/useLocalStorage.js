@@ -45,3 +45,19 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export { useLocalStorage }; // exportamos el Hook personalizado
+
+
+
+
+// const defaultTodos = [
+// 	{ text: "Cortar cebolla", completed: false },
+// 	{ text: "Tomar el curso de introducción a React.js", completed: false },
+// 	{ text: "Llorar con la llorona", completed: false },
+// 	{ text: "Otra tarea", completed: false },
+// 	{ text: "Cortar el pasto", completed: false },
+// 	{ text: "barrer la calle", completed: false },
+// 	{ text: "Aprender estados", completed: true },
+// 	{ text: "Usar estados deribados", completed: true },
+// ];
+
+// localStorage.setItem('todosEnLocalStorage', JSON.stringify(defaultTodos)); // guardamos los todos en el localStorage

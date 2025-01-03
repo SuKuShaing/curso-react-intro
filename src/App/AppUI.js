@@ -9,26 +9,32 @@ import { TodosLoading } from "../TodosLoading";
 import { TodosError } from "../TodosError";
 import { EmptyTodos } from "../EmptyTodos";
 
-function AppUI({
-	loading,
-	error,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    iCompletedTodo,
-    iDeleteTodo
-}) {
+function AppUI(
+// 	{
+// 	loading,
+// 	error,
+//     completedTodos,
+//     totalTodos,
+//     searchValue,
+//     setSearchValue,
+//     searchedTodos,
+//     iCompletedTodo,
+//     iDeleteTodo
+// }
+) {
     return (
         <>
 			<ContainerWhite>
-				<TodoCounter loading={loading} completed={completedTodos} total={totalTodos} />
+				<TodoCounter 
+					// loading={loading} 
+					// completed={completedTodos} 
+					// total={totalTodos} 
+				/>
 
 				<div className="Search-Create">
 					<TodoSearch
-						searchValue={searchValue} // enviamos el estado a traves de la propiedad
-						setSearchValue={setSearchValue}
+						// searchValue={searchValue} // enviamos el estado a traves de la propiedad
+						// setSearchValue={setSearchValue}
 					/>
 					<CreateTodoButton />
 				</div>
