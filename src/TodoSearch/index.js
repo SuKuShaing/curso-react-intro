@@ -1,13 +1,16 @@
 import React from "react";
 import "./TodoSearch.css";
+import { TodoContext } from "../todoContext";
 
 
-function TodoSearch({ searchValue, setSearchValue }) {
+function TodoSearch() {
 	// const [state, setState] = React.useState('Valor inicial del estado');
 	// state es inmutable (no se puede modificar directamente)
 	// setState es el que modifica el estado, ambos pueden tener el nombre que quieran
 
 	// los estados van de padres a hijos y no al revés
+
+	const { searchValue, setSearchValue } = React.useContext(TodoContext);
 
 	return (
 		<input
