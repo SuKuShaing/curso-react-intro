@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-const todoContext = React.createContext()
+const TodoContext = React.createContext()
 
-function TodoProvider() {
+function TodoProvider( { children } ) {
     // Estados
 	const {
 		item: todos,
@@ -23,6 +23,7 @@ function TodoProvider() {
 		return todoText.includes(searchText);
 	});
 
+
 	// React.useEffect(() => {
 	// 	console.log('Log 2: Dentro del useEffect');
 	// }, []);  // si le pasamos un array vacio, el useEffect se ejecutará solo una vez
@@ -30,6 +31,7 @@ function TodoProvider() {
 	// React.useEffect(() => {
 	// 	console.log('Log 2: Dentro del useEffect');
 	// }, [totalTodos]);  // si le pasamos un array con una variable, el useEffect se ejecutará solo cuando esa variable cambie
+
 
 	// Funciones
 	const iCompletedTodo = (text) => {
@@ -52,12 +54,21 @@ function TodoProvider() {
 
 
     return (
-        <todoContext.Provider></todoContext.Provider>
-        <todoContext.Consumer></todoContext.Consumer>
+        <TodoContext.Provider value={{
+			loading,
+			error,
+			completedTodos,
+			totalTodos,
+			searchValue,
+			setSearchValue,
+			searchedTodos,
+			iCompletedTodo,
+			iDeleteTodo
+		}}>
+			{children}
+		</TodoContext.Provider>
+        // <TodoContext.Consumer></TodoContext.Consumer>
     )
 }
 
-<todoContext.Provider></todoContext.Provider>
-<todoContext.Consumer></todoContext.Consumer>
-
-export { todoContext }
+export { TodoContext, TodoProvider };
