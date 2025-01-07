@@ -41,7 +41,11 @@ function AppUI() {
 					/>
 					<CreateTodoButton setOpenModal={setOpenModal} />
 
-					{openModal && <Modal>La funcionalidad de agregar todos</Modal>}
+					{openModal && (
+                        <Modal onClose={() => setOpenModal(false)}>
+                            La funcionalidad de agregar todos
+                        </Modal>
+                    )}
 				</div>
 
 				<TodoList>
