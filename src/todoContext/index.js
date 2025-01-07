@@ -13,7 +13,7 @@ function TodoProvider( { children } ) {
 	} = useLocalStorage('todosEnLocalStorage', []); // al estado de Todos le pasamos el array de defaultTodos
 	const [searchValue, setSearchValue] = React.useState("");
 	// console.log("Los usuarios buscan todos de " + searchValue);
-	const [openModal, setOpenModal] = React.useState(true);
+	const [openModal, setOpenModal] = React.useState(false);
 
 
 	// Estados derivados

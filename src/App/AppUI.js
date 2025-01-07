@@ -22,6 +22,7 @@ function AppUI() {
 		iCompletedTodo,
 		iDeleteTodo,
 		openModal,
+		setOpenModal
 	} = React.useContext(TodoContext);
 
 	return (
@@ -38,7 +39,7 @@ function AppUI() {
 					// searchValue={searchValue} // enviamos el estado a traves de la propiedad
 					// setSearchValue={setSearchValue}
 					/>
-					<CreateTodoButton />
+					<CreateTodoButton setOpenModal={setOpenModal} />
 
 					{openModal && <Modal>La funcionalidad de agregar todos</Modal>}
 				</div>
