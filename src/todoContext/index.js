@@ -13,6 +13,8 @@ function TodoProvider( { children } ) {
 	} = useLocalStorage('todosEnLocalStorage', []); // al estado de Todos le pasamos el array de defaultTodos
 	const [searchValue, setSearchValue] = React.useState("");
 	// console.log("Los usuarios buscan todos de " + searchValue);
+	const [openModal, setOpenModal] = React.useState(true);
+
 
 	// Estados derivados
 	const completedTodos = todos.filter((todo) => !!todo.completed).length; // !! convierte el valor devuelto a booleano
@@ -63,7 +65,9 @@ function TodoProvider( { children } ) {
 			setSearchValue,
 			searchedTodos,
 			iCompletedTodo,
-			iDeleteTodo
+			iDeleteTodo,
+			openModal,
+			setOpenModal
 		}}>
 			{children}
 		</TodoContext.Provider>
