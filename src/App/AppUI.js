@@ -11,6 +11,7 @@ import { TodosLoading } from "../TodosLoading";
 import { TodosError } from "../TodosError";
 import { EmptyTodos } from "../EmptyTodos";
 import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm";
 
 import { TodoContext } from "../todoContext";
 
@@ -43,7 +44,7 @@ function AppUI() {
 
 					{openModal && (
                         <Modal onClose={() => setOpenModal(false)}>
-                            La funcionalidad de agregar todos
+                            <TodoForm />
                         </Modal>
                     )}
 				</div>
