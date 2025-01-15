@@ -20,7 +20,7 @@ function TodoProvider( { children } ) {
 	const completedTodos = todos.filter((todo) => !!todo.completed).length; // !! convierte el valor devuelto a booleano
 	const totalTodos = todos.length;
 	const searchedTodos = todos.filter((todo) => {
-		const todoText = todo.text.toLowerCase();
+		const todoText = todo.text ? todo.text.toLowerCase() : ""; // Verifica si todo.text existe
 		const searchText = searchValue.toLowerCase();
 		return todoText.includes(searchText);
 	});
@@ -37,7 +37,7 @@ function TodoProvider( { children } ) {
 
 	// Funciones
 	const iCompletedTodo = (text) => {
-		const newTodos = [...todos];
+		const newTodos = [...todos]; // copiamos el array de ToDos
 		const todoIndex = newTodos.findIndex((todo) => todo.text === text);
 		if (newTodos[todoIndex].completed) {
 			newTodos[todoIndex].completed = false;
@@ -52,8 +52,16 @@ function TodoProvider( { children } ) {
 		const todoIndex = newTodos.findIndex((todo) => todo.text === text);
 		newTodos.splice(todoIndex, 1); // splice elimina un elemento de un array en el indice que le indiquemos y avanza la cantidad de elementos que le indiquemos
 			saveTodos(newTodos);
-		};
+	};
 
+	const addTodo = (text) => {
+		const newTodos = [...todos]; // copiamos el array de ToDos
+		newTodos.push({
+			text,
+			completed: false,
+		});
+		saveTodos(newTodos);
+	};
 
     return (
         <TodoContext.Provider value={{
@@ -66,8 +74,9 @@ function TodoProvider( { children } ) {
 			searchedTodos,
 			iCompletedTodo,
 			iDeleteTodo,
+			addTodo,
 			openModal,
-			setOpenModal
+			setOpenModal,
 		}}>
 			{children}
 		</TodoContext.Provider>
