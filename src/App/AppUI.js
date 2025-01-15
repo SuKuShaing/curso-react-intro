@@ -44,7 +44,7 @@ function AppUI() {
 
 					{openModal && (
                         <Modal onClose={() => setOpenModal(false)}>
-                            <TodoForm />
+                            <TodoForm setOpenModal={setOpenModal} />
                         </Modal>
                     )}
 				</div>
