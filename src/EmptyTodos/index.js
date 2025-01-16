@@ -1,9 +1,11 @@
-// import "./EmptyTodos.css";
+import "./EmptyTodos.css";
 
 
 function EmptyTodos() {
 	return (
-		<p>Crea tu Primer Todo</p>
+		<li className="TodoItem-empty">
+			<p className="TodoEmpty-p" >Crea tu Primer ToDo presionando el botón +</p>
+		</li>
 	);
 }
 

@@ -27,7 +27,7 @@ function useLocalStorage(itemName, initialValue) {
 				setLoading(false); // cambiamos el estado de loading a false
 				setError(true); // si hay un error al cargar los todos, cambiamos el estado de error a true
 			}
-		}, 3500);
+		}, 1000);
 	}, []); // si le pasamos un array vacio, el useEffect se ejecutará solo una vez
 
 	const iSaveItem = (newItem) => {
