@@ -4,11 +4,24 @@ Fondo utilizado disponible aquí
 https://alvarotrigo.com/blog/animated-backgrounds-css/
 
 
+## Ver el proyecto en funcionando
+https://sukushaing.github.io/curso-react-intro/
 
 
-
-
-
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
 
 
 
